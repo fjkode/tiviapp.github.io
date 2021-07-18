@@ -60,12 +60,12 @@ const getSpecialMethodChannels = (i, j, index) => {
   const array = j.split(",");
   const type = array[0];
   const url = array[1];
-  if (url && !url.includes("://")) {
-    return {
-      type,
-      url: methodForEXTVLCOPT(i, index),
-    };
-  }
+  // if (url && !url.includes("://")) {
+  //   return {
+  //     type,
+  //     url: methodForEXTVLCOPT(i, index),
+  //   };
+  // }
   return { type, url };
 };
 
