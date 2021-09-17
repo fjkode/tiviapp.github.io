@@ -17,7 +17,7 @@ const Menu = () => {
   const notify = (url, title, country) => {
     copyToClipboard(url);
     darkNotification(
-      `You are watching ${title} from ${country}. We copied the channel link for you.`
+      `You are watching ${title} from ${country.toUpperCase()}. We copied the channel link for you.`
     );
   };
   const handleRandom = (e) => {
