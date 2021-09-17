@@ -44,7 +44,7 @@ const Navigation = () => {
         {isPlaying && label !== null && (
           <div className="nav__label">
             <SiAirplayaudio />
-            {label.title} - {label.country}
+            {label.title} - {label.country.toUpperCase()}
           </div>
         )}
         <div>
