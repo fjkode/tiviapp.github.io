@@ -68,6 +68,14 @@ const AboutPage = () => {
         </a>
         ,&nbsp;
         <a
+          href="https://www.npmjs.com/package/react-loading"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>react-loading</strong>
+        </a>
+        ,&nbsp;
+        <a
           href="https://www.npmjs.com/package/react-player"
           target="_blank"
           rel="noopener noreferrer"

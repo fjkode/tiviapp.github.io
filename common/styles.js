@@ -373,6 +373,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        text-transform: capitalize;
     }
     .accordion__flag__img {
         display: inline-block;
@@ -650,6 +651,15 @@ const GlobalStyle = createGlobalStyle`
     }
     .light .red {
         color: darkred;
+    }
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background: rgba(0,0,0,0.5);
     }
 `;
 

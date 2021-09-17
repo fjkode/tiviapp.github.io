@@ -1,7 +1,4 @@
-import lookup from "country-code-lookup";
-
-const BASE_URL =
-  "https://raw.githubusercontent.com/iptv-org/iptv/master/index.m3u";
+const BASE_URL = "https://github.com/iptv-org/iptv/tree/master/channels";
 
 const GET_CH_URL = (cn) =>
   `https://raw.githubusercontent.com/iptv-org/iptv/master/channels/${cn}.m3u`;
@@ -12,21 +9,7 @@ const getTextFromFetch = async (url) => {
   return text;
 };
 
-const getCountryCodes = (array) => {
-  return array
-    .split("#")
-    .map((i) => i.replace(/\n/gi, ""))
-    .filter((i) => i !== "" && (i.includes("EXTM3U") ? null : i))
-    .map((i) => i.split("channels")[0].split(",")[1]);
-};
-
-const getChannelUrls = (array) => {
-  return array
-    .split("#")
-    .map((i) => i.replace(/\n/gi, "").replace(/EXTINF:-1,/gi, ""))
-    .filter((i) => i !== "" && (i.includes("EXTM3U") ? null : i))
-    .map((i) => GET_CH_URL(i.split("/")[1].split(".")[0]));
-};
+const getChannelUrls = (array) => array.map(GET_CH_URL);
 
 const getChannelUrlForMethod = (i, brokenIndex) => {
   return i
@@ -109,29 +92,11 @@ const parseXLinks = (myPromise, codes) => {
   });
 };
 
-const parseLinks = async (myPromise) => {
-  const codes = getCountryCodes(myPromise);
-  const urls = getChannelUrls(myPromise);
-  const promises = urls.map(getTextFromFetch);
-  const results = await Promise.all(promises);
-  return parseXLinks(results, codes);
-};
-
 const getData = async () => {
   try {
     const promiseBit = await fetch(BASE_URL);
     const textBit = await promiseBit.text();
-    const mainList = await parseLinks(textBit);
-    const finalList = mainList
-      .filter((i) => i.length)
-      .map((i, idx) => {
-        return {
-          id: ++idx,
-          code: lookup.byCountry(i[0].country),
-          content: [...i],
-        };
-      });
-    return finalList;
+    return textBit;
   } catch (e) {
     return "fail";
   }
@@ -168,4 +133,11 @@ const isValidUrl = (string) => {
   return url.protocol === "http:" || url.protocol === "https:";
 };
 
-export { getData, copyToClipboard, isValidUrl };
+export {
+  getData,
+  copyToClipboard,
+  isValidUrl,
+  parseXLinks,
+  getTextFromFetch,
+  getChannelUrls,
+};

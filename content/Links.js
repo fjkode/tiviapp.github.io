@@ -21,7 +21,7 @@ const Links = () => {
         aria-label="Check latest version metrics"
         title="Check latest version metrics"
       >
-        v1.14
+        v1.15
       </a>
     </>
   );

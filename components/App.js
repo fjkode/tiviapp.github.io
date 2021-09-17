@@ -1,4 +1,7 @@
+import lookup from "country-code-lookup";
+import { getChannelUrls, parseXLinks, getTextFromFetch } from "../common";
 import React, { useState, useEffect } from "react";
+import RLoading from "react-loading";
 import MenuContext from "../context/MenuContext";
 import { useDarkMode } from "../common/useDarkMode";
 import Menu from "../components/Menu";
@@ -10,9 +13,10 @@ const App = ({ listing }) => {
   const [showList, setShowList] = useState(false);
   const [channel, setChannel] = useState({
     url: null,
-    urls: listing,
+    urls: null,
     keyword: "",
   });
+  const { urls } = channel;
   const handleShowFaq = (e) => {
     e.preventDefault();
     setShowFaq(true);
@@ -29,6 +33,41 @@ const App = ({ listing }) => {
     document.body.classList.add("light");
     document.body.classList.remove("dark");
   }
+  useEffect(async () => {
+    const parser = new DOMParser();
+    const document = parser.parseFromString(listing, "text/html");
+    const countries = Array.from(
+      document.querySelectorAll('.js-navigation-open[title*=".m3u"]')
+    ).map((i) => i.textContent.replace(".m3u", ""));
+
+    const urls = getChannelUrls(countries);
+    const promises = urls.map(getTextFromFetch);
+    const results = await Promise.all(promises);
+    const mainList = await parseXLinks(results, countries);
+
+    const myCTitle = (i) =>
+      lookup.byInternet(i[0].country.toUpperCase()) !== null
+        ? lookup.byInternet(i[0].country.toUpperCase()).country
+        : i[0].country;
+
+    const finalList = await mainList
+      .filter((i) => i.length)
+      .map((i, idx) => {
+        return {
+          id: ++idx,
+          cTitle: myCTitle(i),
+          code: lookup.byInternet(i[0].country.toUpperCase()) || null,
+          content: [...i],
+        };
+      });
+
+    setChannel({
+      ...channel,
+      url: null,
+      urls: finalList,
+      keyword: "",
+    });
+  }, []);
   useEffect(() => {
     // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
     let vh = window.innerHeight * 0.01;
@@ -38,6 +77,12 @@ const App = ({ listing }) => {
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
   }, []);
+  if (urls === null)
+    return (
+      <div className="loading">
+        <RLoading />
+      </div>
+    );
   return (
     <>
       <MenuContext.Provider

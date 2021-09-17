@@ -20,7 +20,7 @@ const ChannelsBox = () => {
   const [show, setShow] = useState(null);
   return (
     <Accordion allowZeroExpanded>
-      {urls.map(({ content, id, code }) => {
+      {urls.map(({ content, id, code, cTitle }) => {
         const handleClick = (e, id) => {
           const key = e.currentTarget.dataset.key
             ? Number(e.currentTarget.dataset.key)
@@ -47,9 +47,7 @@ const ChannelsBox = () => {
                           expanded ? <VscChevronUp /> : <VscChevronDown />
                         }
                       </AccordionItemState>
-                      <div className="accordion__country">
-                        {content[0].country}
-                      </div>
+                      <div className="accordion__country">{cTitle}</div>
                     </div>
                     <div className="accordion__data">
                       <div className="accordion__flag">
