@@ -1,5 +1,11 @@
 const BASE_URL = "https://github.com/iptv-org/iptv/tree/master/channels";
 
+const randomNumbers = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+};
+
 const GET_CH_URL = (cn) =>
   `https://raw.githubusercontent.com/iptv-org/iptv/master/channels/${cn}.m3u`;
 
@@ -140,4 +146,5 @@ export {
   parseXLinks,
   getTextFromFetch,
   getChannelUrls,
+  randomNumbers,
 };

@@ -1,4 +1,5 @@
-import ReactCountryFlag from "react-country-flag";
+// import ReactCountryFlag from "react-country-flag";
+import { randomNumbers } from "../common";
 
 const fixBrokenFlags = (country) => {
   // if (country === "Gambia")
@@ -36,7 +37,10 @@ const fixBrokenFlags = (country) => {
   // if (country === "Netherlands Antilles")
   //   return <img className="accordion__flag__img" src="./an.svg" />;
   return (
-    <img className="accordion__flag__img" src="http://placekitten.com/80/44" />
+    <img
+      className="accordion__flag__img"
+      src={`http://placekitten.com/${randomNumbers(60, 80)}/44`}
+    />
   );
 };
 

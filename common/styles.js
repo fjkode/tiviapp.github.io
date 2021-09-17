@@ -661,6 +661,9 @@ const GlobalStyle = createGlobalStyle`
         overflow: hidden;
         background: rgba(0,0,0,0.5);
     }
+    .loading svg {
+        min-height: 5rem;
+    }
 `;
 
 export default GlobalStyle;

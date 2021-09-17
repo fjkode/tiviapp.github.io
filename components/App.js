@@ -47,8 +47,10 @@ const App = ({ listing }) => {
 
     const myCTitle = (i) =>
       lookup.byInternet(i[0].country.toUpperCase()) !== null
-        ? lookup.byInternet(i[0].country.toUpperCase()).country
-        : i[0].country;
+        ? `${i[0].country.toUpperCase()} — ${
+            lookup.byInternet(i[0].country.toUpperCase()).country
+          }`
+        : i[0].country.toUpperCase();
 
     const finalList = await mainList
       .filter((i) => i.length)
@@ -80,7 +82,7 @@ const App = ({ listing }) => {
   if (urls === null)
     return (
       <div className="loading">
-        <RLoading />
+        <RLoading type="spin" />
       </div>
     );
   return (
