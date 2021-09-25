@@ -160,6 +160,8 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
     }
     .main__ft__a {
+        min-height: 64px;
+        min-width: 64px;
         max-height: 4rem;
         max-width: 4rem;
     }
