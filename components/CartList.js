@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { isBrowser, isMobile } from "react-device-detect";
-import { FaPlay, FaRegCopy } from "react-icons/fa";
+import { FaPlay, FaRegCopy, FaHeart } from "react-icons/fa";
+import { BsCollectionPlay } from "react-icons/bs";
 import MenuContext from "../context/MenuContext";
 import MyPlaylistContext from "../context/MyPlaylistContext";
 import { copyToClipboard } from "../common";
@@ -60,6 +61,14 @@ const CartList = () => {
                     aria-label="Play"
                   >
                     <FaPlay />
+                  </a>
+                  <a
+                    href={`http://yielding-meeting.surge.sh/?url=${url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Alternate Play option"
+                  >
+                    <BsCollectionPlay />
                   </a>
                   <a href="#" onClick={(e) => notifyCopy(url, e)}>
                     <FaRegCopy />

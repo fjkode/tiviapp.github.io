@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { isBrowser, isMobile } from "react-device-detect";
 import { FaPlay, FaRegCopy, FaHeart } from "react-icons/fa";
+import { BsCollectionPlay } from "react-icons/bs";
 import ChannelsListContext from "../context/ChannelsListContext";
 import MenuContext from "../context/MenuContext";
 import { copyToClipboard } from "../common";
@@ -84,6 +85,14 @@ const ChannelsList = () => {
                     aria-label="Play"
                   >
                     <FaPlay />
+                  </a>
+                  <a
+                    href={`http://yielding-meeting.surge.sh/?url=${url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Alternate Play option"
+                  >
+                    <BsCollectionPlay />
                   </a>
                   <a href="#" onClick={(e) => notifyCopy(url, e)}>
                     <FaRegCopy />
