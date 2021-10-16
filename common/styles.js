@@ -189,7 +189,7 @@ const GlobalStyle = createGlobalStyle`
         object-fit: contain;
     }
     .main__text a {
-        display: flex;
+        // display: flex;
         padding: 0.25rem;
         border: 1px solid #333;
     }
@@ -215,6 +215,7 @@ const GlobalStyle = createGlobalStyle`
         padding-bottom: 1rem;
         display: flex;
         align-items: center;
+        font-size: 0.85rem;
     }
     .nav__label svg {
         margin-right: 0.5rem;
