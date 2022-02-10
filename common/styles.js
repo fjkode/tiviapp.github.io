@@ -667,6 +667,12 @@ const GlobalStyle = createGlobalStyle`
     .loading svg {
         min-height: 5rem;
     }
+    .light .version {
+        color: black;
+    }
+    .version {
+        color: white;
+    }
 `;
 
 export default GlobalStyle;

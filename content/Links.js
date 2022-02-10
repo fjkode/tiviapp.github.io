@@ -14,16 +14,7 @@ const Links = () => {
       >
         <FaChild />
       </a>
-      <a
-        // href="http://jackal.surge.sh/report.html"
-        href="https://github.com/tpkahlon/jackal/blob/main/CHANGELOG.md"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Check latest version metrics"
-        title="Check latest version metrics"
-      >
-        v1.15
-      </a>
+      <span className="version">v1.15</span>
     </>
   );
 };
