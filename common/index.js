@@ -39,9 +39,10 @@ const methodForEXTVLCOPT = (i, brokenIndex) => {
   const channelName = getChannelNameForMethod(i, brokenIndex);
   const channelUrl = getChannelUrlForMethod(i, brokenIndex);
   const newUrlString = channelUrl[0];
-  const getUrl = newUrlString.split("http")[1];
+  const getUrls = newUrlString.split("://");
+  const getUrl = getUrls[getUrls.length - 1];
   const cleanUrl = getUrl.replace(/\n/g, "");
-  const finalUrl = channelName[0] + "\n" + "http" + cleanUrl;
+  const finalUrl = channelName[0] + "\n" + "http://" + cleanUrl;
   return finalUrl;
 };
 

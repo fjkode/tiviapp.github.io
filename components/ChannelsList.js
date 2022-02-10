@@ -83,10 +83,12 @@ const ChannelsList = () => {
                     href="#"
                     onClick={(e) => handlePlay(url, e)}
                     aria-label="Play"
+                    title={url}
                   >
                     <FaPlay />
                   </a>
                   <a
+                    title={url}
                     href={`http://yielding-meeting.surge.sh/?url=${url}`}
                     target="_blank"
                     rel="noopener noreferrer"

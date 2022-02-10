@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.16] - 2022-02-09
+
+- Fix broken links
+
 ## [1.15] - 2021-08-17
 
 - Major architectural revamp to flow with IPTV Repository changes
