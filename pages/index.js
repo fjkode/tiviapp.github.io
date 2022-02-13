@@ -7,20 +7,20 @@ import App from "../components/App";
 import Error from "../content/Error";
 
 export default function Home({ listing }) {
-  useEffect(
-    () =>
-      darkNotificationBottom(
-        "Always use HTTP protocol when viewing this site for seamless experience. Check FAQs section for more information."
-      ),
-    []
-  );
-  setTimeout(
-    () =>
-      darkNotificationBottom(
-        "If you can, please make a difference in a child's life by donating books, clothes etc. or any help in whatever way possible for you."
-      ),
-    60000
-  );
+  // useEffect(
+  //   () =>
+  //     darkNotificationBottom(
+  //       "Always use HTTP protocol when viewing this site for seamless experience. Check FAQs section for more information."
+  //     ),
+  //   []
+  // );
+  // setTimeout(
+  //   () =>
+  //     darkNotificationBottom(
+  //       "If you can, please make a difference in a child's life by donating books, clothes etc. or any help in whatever way possible for you."
+  //     ),
+  //   60000
+  // );
   return (
     <>
       <Head>

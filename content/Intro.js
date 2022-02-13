@@ -67,7 +67,7 @@ const Intro = () => {
           />
         </a>
       </div> */}
-      <h2>Please Support</h2>
+      {/* <h2>Please Support</h2>
       <div className="main__ft">
         <a
           className="main__ft__a"
@@ -103,7 +103,7 @@ const Intro = () => {
             alt="Please support maintainers of IPTV project"
           />
         </a>
-      </div>
+      </div> */}
       <footer className="trademark">
         &copy; {new Date().getFullYear()} - Made with ❤️ for the people
       </footer>
