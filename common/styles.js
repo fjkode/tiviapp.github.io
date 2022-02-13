@@ -216,9 +216,12 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         align-items: center;
         font-size: 0.85rem;
+        gap: 0.5rem;
     }
-    .nav__label svg {
-        margin-right: 0.5rem;
+    .nav__label__span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
     .nav__row {
         display: flex;
