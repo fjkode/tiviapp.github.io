@@ -43,8 +43,8 @@ const GlobalStyle = createGlobalStyle`
     }
     .trademark {
         position: fixed;
-        left: 0.75rem;
-        bottom: 0.75rem;
+        left: 1rem;
+        bottom: 1rem;
         font-size: 0.7rem;
     }
     .controls {

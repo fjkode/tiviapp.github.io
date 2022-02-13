@@ -8,11 +8,12 @@ import { SiAirplayaudio } from "react-icons/si";
 import MenuContext from "../context/MenuContext";
 import NavigationContext from "../context/NavigationContext";
 import Cart from "./Cart";
+import { fixAllFlags } from "../common/components";
 
 const Navigation = () => {
   const { channel, setChannel, handleShowList, handleShowFaq } =
     useContext(MenuContext);
-  const { urls, url, keyword, isPlaying } = channel;
+  const { urls, url, keyword, isPlaying, country } = channel;
   const [label, setLabel] = useState(null);
   useEffect(() => {
     if (url !== null) {
@@ -45,12 +46,14 @@ const Navigation = () => {
         {isPlaying && label !== null && (
           <div className="nav__label">
             <SiAirplayaudio />
-            {label.title} - {label.country.toUpperCase()}
+            {label.title}&nbsp;&nbsp;/&nbsp;
+            <em>{label.country.toUpperCase()}</em>&nbsp;&nbsp;&nbsp;
+            {fixAllFlags(country)}
           </div>
         )}
         <div>
           <div className="nav__content">
-            <a
+            {/* <a
               href="http://jackal.surge.sh"
               className="nav__btn"
               aria-label="Open HTTP version of this website"
@@ -58,7 +61,7 @@ const Navigation = () => {
             >
               <MdHttp />
             </a>
-            {/* <a
+            <a
               href="#"
               className="nav__btn"
               onClick={handleLink}

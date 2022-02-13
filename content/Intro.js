@@ -105,7 +105,7 @@ const Intro = () => {
         </a>
       </div> */}
       <footer className="trademark">
-        &copy; {new Date().getFullYear()} - Made with ❤️ for the people
+        v2.0 / &copy; {new Date().getFullYear()} / Made with ❤️ for the people
       </footer>
     </div>
   );
