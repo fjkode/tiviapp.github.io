@@ -673,6 +673,14 @@ const GlobalStyle = createGlobalStyle`
     .version {
         color: white;
     }
+    .card-name {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .accordion__flag__img-cover {
+        object-fit: cover;
+    }
 `;
 
 export default GlobalStyle;

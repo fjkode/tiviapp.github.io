@@ -1,6 +1,6 @@
 import React from "react";
-import { FaList, FaLink, FaHeart } from "react-icons/fa";
-import { BsShuffle } from "react-icons/bs";
+import { FaList, FaHeart } from "react-icons/fa";
+import { BsShuffle, BsCollectionPlay } from "react-icons/bs";
 
 const AboutPage = () => {
   return (
@@ -76,14 +76,6 @@ const AboutPage = () => {
         </a>
         ,&nbsp;
         <a
-          href="https://www.npmjs.com/package/react-player"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <strong>react-player</strong>
-        </a>
-        ,&nbsp;
-        <a
           href="https://www.npmjs.com/package/react-toastify"
           target="_blank"
           rel="noopener noreferrer"
@@ -141,12 +133,12 @@ const AboutPage = () => {
         <FaList />
       </li>
       <li className="li li--flex">
-        <span>To watch a random channel, use:</span>
+        <span>To get a random channel, use:</span>
         <BsShuffle />
       </li>
       <li className="li li--flex">
         <span>To play a live stream through a M3U8 link, use:</span>
-        <FaLink />
+        <BsCollectionPlay />
       </li>
       <li className="li li--flex">
         <span>To view or add channels to your playlist, use:</span>
@@ -159,60 +151,6 @@ const AboutPage = () => {
         </span>
         <FiRefreshCw />
       </li> */}
-      <li>
-        If you have a Chromecast, cast any stream to your TV by using Chromium
-        based browser from your PC/Laptop. Right click on the playing live
-        stream and click Cast.
-      </li>
-      <li>
-        <span>
-          In a channel, <span style={{ color: "red" }}>red text</span> means
-          live stream uses HTTP protocol and{" "}
-          <span style={{ color: "green" }}>green text</span> means live stream
-          uses HTTPS protocol.
-        </span>
-        <br />
-        <br />
-        <span>
-          <strong>Note:</strong> If you are using a Desktop/Laptop machine,
-          please make sure that you load this site with http protocol instead of
-          https.
-          <br />
-          For example, under Vietnam, channel no. 1 (ANTV) stream will work if
-          you load the page{" "}
-          <a href="http://jackal.surge.sh">
-            <strong>http://jackal.surge.sh</strong>
-          </a>{" "}
-          rather than <strong>https://jackal.surge.sh</strong>.
-          <br />
-          <span>
-            For example, under Vietnam, channel no. 4 (Bến Tre) stream may not
-            work on desktop/laptop devices but it works on iPhone/iOS devices or
-            VLC.
-          </span>
-          <br />
-          <br />
-          <span>
-            If a stream does not load, please copy its URL and test it{" "}
-            <a
-              href="https://hls-js.netlify.app/demo/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>here</strong>
-            </a>
-            . If it fails, it cannot work in the browser. In such cases, you can
-            try VLC software.
-            <br />
-            For example, this{" "}
-            <a href="http://hbbtvlive.v3.tvp.pl/hbbtvlive/livestream.php?app_id=tvpbialystok">
-              <strong>stream</strong>
-            </a>{" "}
-            does not load in browser but works on iPhone/iOS devices or through
-            VLC software.
-          </span>
-        </span>
-      </li>
       <li>
         <small>
           No video files are stored in this repository. The repository simply

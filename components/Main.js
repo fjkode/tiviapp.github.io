@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 import MenuContext from "../context/MenuContext";
 import AboutContext from "../context/AboutContext";
 import { successNotification, errorNotification } from "../common/notification";
 import About from "../modals/About";
 import Toggle from "../components/Toggle";
+import ChannelCard from "../components/ChannelCard";
 import Links from "../content/Links";
 import Intro from "../content/Intro";
 
 const Main = () => {
   const { channel, setChannel, showFaq, setShowFaq, theme, toggleTheme } =
     useContext(MenuContext);
-  const { url, urls } = channel;
+  const { url, title, country, urls } = channel;
   const notifyOkay = () =>
     successNotification(
       "This live stream seems healthy. It will start playing in few seconds."
@@ -71,14 +72,15 @@ const Main = () => {
         {url === null ? (
           <Intro />
         ) : (
-          <ReactPlayer
-            playing
-            controls
-            url={url}
-            onError={(e, f) => banTV(e, f, url)}
-            height="inherit"
-            width="auto"
-          />
+          <ChannelCard url={url} title={title} country={country} />
+          // <ReactPlayer
+          //   playing
+          //   controls
+          //   url={url}
+          //   onError={(e, f) => banTV(e, f, url)}
+          //   height="inherit"
+          //   width="auto"
+          // />
         )}
         <AboutContext.Provider
           value={{

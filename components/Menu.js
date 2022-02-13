@@ -31,10 +31,12 @@ const Menu = () => {
       setChannel({
         ...channel,
         url,
+        title,
+        country,
         keyword,
         isPlaying: true,
       });
-      notify(url, title, country);
+      // notify(url, title, country);
     }
     if (isMobile) {
       window.open(url, "_blank");

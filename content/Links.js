@@ -14,7 +14,7 @@ const Links = () => {
       >
         <FaChild />
       </a>
-      <span className="version">v1.16</span>
+      <span className="version">v2.0</span>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FaList, FaLink, FaPlay } from "react-icons/fa";
+// import { FaList, FaLink, FaPlay } from "react-icons/fa";
+import { FaList, FaPlay } from "react-icons/fa";
 import { MdHttp } from "react-icons/md";
 import { BsShuffle } from "react-icons/bs";
 import { FiHelpCircle } from "react-icons/fi";
@@ -57,7 +58,7 @@ const Navigation = () => {
             >
               <MdHttp />
             </a>
-            <a
+            {/* <a
               href="#"
               className="nav__btn"
               onClick={handleLink}
@@ -65,7 +66,7 @@ const Navigation = () => {
               title="Enter video source"
             >
               <FaLink />
-            </a>
+            </a> */}
             <a
               href="#"
               className="nav__btn"

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { isBrowser, isMobile } from "react-device-detect";
+// import { isBrowser, isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import { FaPlay, FaRegCopy, FaHeart } from "react-icons/fa";
 import { BsCollectionPlay } from "react-icons/bs";
 import ChannelsListContext from "../context/ChannelsListContext";
@@ -21,17 +22,18 @@ const ChannelsList = () => {
     darkNotification("Channel added successfully to your playlist!");
   const handlePlay = (currentUrl, e) => {
     e.preventDefault();
-    if (isBrowser) {
-      setChannel({
-        ...channel,
-        url: currentUrl,
-        keyword: "",
-        isPlaying: true,
-      });
-    }
-    if (isMobile) {
-      window.open(currentUrl, "_blank");
-    }
+    window.open(currentUrl, "_blank");
+    // if (isBrowser) {
+    //   setChannel({
+    //     ...channel,
+    //     url: currentUrl,
+    //     keyword: "",
+    //     isPlaying: true,
+    //   });
+    // }
+    // if (isMobile) {
+    //   window.open(currentUrl, "_blank");
+    // }
   };
   const handleStoreChannel = (item, e) => {
     e.preventDefault();
@@ -79,14 +81,16 @@ const ChannelsList = () => {
               </td>
               <td>
                 <div className="controls">
-                  <a
-                    href="#"
-                    onClick={(e) => handlePlay(url, e)}
-                    aria-label="Play"
-                    title={url}
-                  >
-                    <FaPlay />
-                  </a>
+                  {isMobile && (
+                    <a
+                      href="#"
+                      onClick={(e) => handlePlay(url, e)}
+                      aria-label="Play"
+                      title={url}
+                    >
+                      <FaPlay />
+                    </a>
+                  )}
                   <a
                     title={url}
                     href={`http://yielding-meeting.surge.sh/?url=${url}`}
