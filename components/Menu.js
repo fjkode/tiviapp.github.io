@@ -27,20 +27,28 @@ const Menu = () => {
     const { content } = randomCountry;
     const randomChannel = content[Math.floor(Math.random() * content.length)];
     const { url, title, keyword, country } = randomChannel;
-    if (isBrowser) {
-      setChannel({
-        ...channel,
-        url,
-        title,
-        country,
-        keyword,
-        isPlaying: true,
-      });
-      // notify(url, title, country);
-    }
-    if (isMobile) {
-      window.open(url, "_blank");
-    }
+    setChannel({
+      ...channel,
+      url,
+      title,
+      country,
+      keyword,
+      isPlaying: true,
+    });
+    // if (isBrowser) {
+    //   setChannel({
+    //     ...channel,
+    //     url,
+    //     title,
+    //     country,
+    //     keyword,
+    //     isPlaying: true,
+    //   });
+    //   // notify(url, title, country);
+    // }
+    // if (isMobile) {
+    //   window.open(url, "_blank");
+    // }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
