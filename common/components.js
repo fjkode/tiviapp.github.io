@@ -1,7 +1,9 @@
 import ReactCountryFlag from "react-country-flag";
 import { randomNumbers } from "../common";
 
-const returnFlag = (code) => <ReactCountryFlag svg countryCode={code} />;
+const returnFlag = (code) => (
+  <ReactCountryFlag className="accordion__flag__img" svg countryCode={code} />
+);
 
 const returnOneFlag = (code) => (
   <ReactCountryFlag svg countryCode={code} style={{ fontSize: "1.25rem" }} />
