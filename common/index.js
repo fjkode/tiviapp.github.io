@@ -1,4 +1,4 @@
-const BASE_URL = "https://github.com/iptv-org/iptv/tree/master/channels";
+const BASE_URL = "https://github.com/iptv-org/iptv/tree/master/streams";
 
 const randomNumbers = (min, max) => {
   min = Math.ceil(min);
@@ -7,7 +7,7 @@ const randomNumbers = (min, max) => {
 };
 
 const GET_CH_URL = (cn) =>
-  `https://raw.githubusercontent.com/iptv-org/iptv/master/channels/${cn}.m3u`;
+  `https://raw.githubusercontent.com/iptv-org/iptv/master/streams/${cn}.m3u`;
 
 const getTextFromFetch = async (url) => {
   const req = await fetch(url);
