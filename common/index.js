@@ -39,8 +39,6 @@ const methodForEXTVLCOPT = (i, brokenIndex) => {
   const channelName = getChannelNameForMethod(i, brokenIndex);
   const channelUrl = getChannelUrlForMethod(i, brokenIndex);
 
-  console.log(channelName, channelUrl.length);
-
   if (Array.isArray(channelUrl) && channelUrl.length === 0) {
     return null;
   }
