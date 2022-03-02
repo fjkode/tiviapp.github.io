@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Ubuntu", sans-serif;
     }
     .danger {
-        background: rgba(255, 0, 0, 0.7);
+        background: orange;
     }
     /* UTILITY */
     .children {
@@ -653,10 +653,10 @@ const GlobalStyle = createGlobalStyle`
         color: darkgreen;
     }
     .red {
-        color: red;
+        color: orange;
     }
     .light .red {
-        color: darkred;
+        color: darkblue;
     }
     .loading {
         display: flex;
