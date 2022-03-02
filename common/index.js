@@ -38,6 +38,13 @@ const getChannelNameForMethod = (i, brokenIndex) => {
 const methodForEXTVLCOPT = (i, brokenIndex) => {
   const channelName = getChannelNameForMethod(i, brokenIndex);
   const channelUrl = getChannelUrlForMethod(i, brokenIndex);
+
+  console.log(channelName, channelUrl.length);
+
+  if (Array.isArray(channelUrl) && channelUrl.length === 0) {
+    return null;
+  }
+
   const newUrlString = channelUrl[0];
   const getUrls = newUrlString.split("://");
   const getUrl = getUrls[getUrls.length - 1];
