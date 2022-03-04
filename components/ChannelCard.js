@@ -67,7 +67,7 @@ const Toggle = ({ url, title, country }) => (
               )}
               <a
                 title={url}
-                href={`http://yielding-meeting.surge.sh/?url=${url}`}
+                href={`http://rplayer.surge.sh/?url=${url}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Alternate Play option"
