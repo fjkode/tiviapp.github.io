@@ -62,11 +62,14 @@ const App = ({ listing }) => {
           content: [...i],
         };
       });
+    const refinedList = finalList.filter(
+      (i) => !(i.cTitle === "US_ADULTIPTV" || i.cTitle === "US_REDTRAFFIC")
+    );
 
     setChannel({
       ...channel,
       url: null,
-      urls: finalList,
+      urls: refinedList,
       keyword: "",
     });
   }, []);
