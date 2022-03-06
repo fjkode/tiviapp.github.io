@@ -40,6 +40,10 @@ const handleStoreChannel = (item, e) => {
     notifyAdd();
   }
 };
+const handlePlay = (currentUrl, e) => {
+  e.preventDefault();
+  window.open(currentUrl, "_blank");
+};
 
 const Toggle = ({ url, title, country }) => (
   <div>
@@ -58,7 +62,7 @@ const Toggle = ({ url, title, country }) => (
               {isMobile && (
                 <a
                   href="#"
-                  // onClick={(e) => handlePlay(url, e)}
+                  onClick={(e) => handlePlay(url, e)}
                   aria-label="Play"
                   title={url}
                 >
@@ -79,7 +83,9 @@ const Toggle = ({ url, title, country }) => (
               </a>
               <a
                 href="#"
-                onClick={(e) => handleStoreChannel({ title, url }, e)}
+                onClick={(e) => {
+                  handleStoreChannel({ title, url }, e);
+                }}
                 aria-label="Add to my playlist"
               >
                 <FaHeart />

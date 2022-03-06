@@ -105,7 +105,9 @@ const ChannelsList = () => {
                   </a>
                   <a
                     href="#"
-                    onClick={(e) => handleStoreChannel(j, e)}
+                    onClick={(e) => {
+                      handleStoreChannel(j, e);
+                    }}
                     aria-label="Add to my playlist"
                   >
                     <FaHeart />

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { isBrowser, isMobile } from "react-device-detect";
-// import { FaPlay, FaRegCopy, FaHeart } from "react-icons/fa";
-import { FaRegCopy } from "react-icons/fa";
+import { FaPlay, FaRegCopy } from "react-icons/fa";
 import { BsCollectionPlay } from "react-icons/bs";
 import MenuContext from "../context/MenuContext";
 import MyPlaylistContext from "../context/MyPlaylistContext";
@@ -56,6 +55,16 @@ const CartList = () => {
               </td>
               <td>
                 <div className="controls">
+                  {isMobile && (
+                    <a
+                      href="#"
+                      onClick={(e) => handlePlay(url, e)}
+                      aria-label="Play"
+                      title={url}
+                    >
+                      <FaPlay />
+                    </a>
+                  )}
                   <a
                     title={url}
                     href={`http://rplayer.surge.sh/?url=${url}`}
@@ -65,21 +74,6 @@ const CartList = () => {
                   >
                     <BsCollectionPlay />
                   </a>
-                  {/* <a
-                    href="#"
-                    onClick={(e) => handlePlay(url, e)}
-                    aria-label="Play"
-                  >
-                    <FaPlay />
-                  </a> */}
-                  {/* <a
-                    href={`http://rplayer.surge.sh/?url=${url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Alternate Play option"
-                  >
-                    <BsCollectionPlay />
-                  </a> */}
                   <a href="#" onClick={(e) => notifyCopy(url, e)}>
                     <FaRegCopy />
                   </a>

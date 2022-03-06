@@ -40,7 +40,8 @@ const Cart = () => {
     <>
       <a
         href="#"
-        className={`nav__btn ${myCart ? "nav__btn--hide" : ""}`}
+        // className={`nav__btn ${myCart ? "nav__btn--hide" : ""}`}
+        className="nav__btn"
         onClick={handleShow}
         aria-label="My playlist"
         title="My playlist"

@@ -684,6 +684,12 @@ const GlobalStyle = createGlobalStyle`
     .accordion__flag__img-cover {
         object-fit: cover;
     }
+    .lc {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
 `;
 
 export default GlobalStyle;
