@@ -45,12 +45,21 @@ const App = ({ listing }) => {
     const results = await Promise.all(promises);
     const mainList = await parseXLinks(results, countries);
 
-    const myCTitle = (i) =>
-      lookup.byInternet(i[0].country.toUpperCase()) !== null
-        ? `${i[0].country.toUpperCase()} — ${
-            lookup.byInternet(i[0].country.toUpperCase()).country
-          }`
-        : i[0].country.toUpperCase();
+    const myCTitle = (i) => {
+      const code = i[0].country.toUpperCase();
+      const newCode = code.includes("_") ? code.split("_")[0] : code;
+      const getCountry = lookup.byInternet(newCode)?.country;
+      const name = lookup.byInternet(newCode)?.country;
+      return getCountry
+        ? `${newCode} ${code === newCode ? `: ${name}` : `[${code}] : ${name}`}`
+        : `${newCode}`;
+    };
+    // const myCTitle = (i) =>
+    //   lookup.byInternet(i[0].country.toUpperCase()) !== null
+    //     ? `${i[0].country.toUpperCase()} : ${
+    //         lookup.byInternet(i[0].country.toUpperCase()).country
+    //       }`
+    //     : i[0].country.toUpperCase();
 
     const finalList = await mainList
       .filter((i) => i.length)
@@ -62,9 +71,11 @@ const App = ({ listing }) => {
           content: [...i],
         };
       });
-    const refinedList = finalList.filter(
-      (i) => !(i.cTitle === "US_ADULTIPTV" || i.cTitle === "US_REDTRAFFIC")
-    );
+    const refinedList = finalList.filter((i) => {
+      return !(
+        i.cTitle.includes("US_ADULTIPTV") || i.cTitle.includes("US_REDTRAFFIC")
+      );
+    });
 
     setChannel({
       ...channel,

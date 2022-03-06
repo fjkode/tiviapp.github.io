@@ -1,15 +1,32 @@
 import ReactCountryFlag from "react-country-flag";
 import { randomNumbers } from "../common";
 
-const returnFlag = (code) => (
-  <ReactCountryFlag className="accordion__flag__img" svg countryCode={code} />
-);
+const fixCode = (code) => {
+  return code.includes("_") ? code.split("_")[0] : code;
+};
 
-const returnOneFlag = (code) => (
-  <ReactCountryFlag svg countryCode={code} style={{ fontSize: "1.25rem" }} />
-);
+const returnFlag = (code) => {
+  return (
+    <ReactCountryFlag
+      className="accordion__flag__img"
+      svg
+      countryCode={fixCode(code)}
+    />
+  );
+};
+
+const returnOneFlag = (code) => {
+  return (
+    <ReactCountryFlag
+      svg
+      countryCode={fixCode(code)}
+      style={{ fontSize: "1.25rem" }}
+    />
+  );
+};
 
 const fixBrokenFlags = (country) => {
+  if (!country) return;
   if (country.trim().toLowerCase().includes("us_")) return returnFlag("us");
   if (country.trim().toLowerCase().includes("uk_")) return returnFlag("gb");
   if (country.trim().toLowerCase().includes("se_")) return returnFlag("se");
@@ -33,14 +50,29 @@ const fixBrokenFlags = (country) => {
   if (country.trim().toLowerCase().includes("at_")) return returnFlag("at");
   if (country === "ve") return returnFlag("ve");
   return (
-    <img
+    <ReactCountryFlag
       className="accordion__flag__img"
-      src={`http://placekitten.com/${randomNumbers(60, 80)}/44`}
+      svg
+      countryCode={fixCode(country)}
     />
   );
+  // return (
+  //   <ReactCountryFlag
+  //     svg
+  //     countryCode={fixCode(country)}
+  //     style={{ fontSize: "1.25rem" }}
+  //   />
+  // );
+  // return (
+  //   <img
+  //     className="accordion__flag__img"
+  //     src={`http://placekitten.com/${randomNumbers(60, 80)}/44`}
+  //   />
+  // );
 };
 
 const fixAllFlags = (country) => {
+  if (!country) return;
   if (country.trim().toLowerCase().includes("us_")) return returnOneFlag("us");
   if (country.trim().toLowerCase().includes("uk_")) return returnOneFlag("gb");
   if (country.trim().toLowerCase().includes("se_")) return returnOneFlag("se");
@@ -63,20 +95,20 @@ const fixAllFlags = (country) => {
   if (country.trim().toLowerCase().includes("au_")) return returnOneFlag("au");
   if (country.trim().toLowerCase().includes("at_")) return returnOneFlag("at");
   if (country === "ve") return returnOneFlag("ve");
-  if (country)
-    return (
-      <ReactCountryFlag
-        svg
-        countryCode={country}
-        style={{ fontSize: "1.25rem" }}
-      />
-    );
+  // if (country)
   return (
-    <img
-      src={`http://placekitten.com/${randomNumbers(60, 80)}/44`}
+    <ReactCountryFlag
+      svg
+      countryCode={fixCode(country)}
       style={{ fontSize: "1.25rem" }}
     />
   );
+  // return (
+  //   <img
+  //     src={`http://placekitten.com/${randomNumbers(60, 80)}/44`}
+  //     style={{ fontSize: "1.25rem" }}
+  //   />
+  // );
 };
 
 export { fixBrokenFlags, fixAllFlags };
