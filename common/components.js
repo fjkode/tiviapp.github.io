@@ -49,6 +49,7 @@ const fixBrokenFlags = (country) => {
   if (country.trim().toLowerCase().includes("au_")) return returnFlag("au");
   if (country.trim().toLowerCase().includes("at_")) return returnFlag("at");
   if (country === "ve") return returnFlag("ve");
+  if (country === "unsorted") return returnFlag("xx");
   return (
     <ReactCountryFlag
       className="accordion__flag__img"
