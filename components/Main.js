@@ -4,7 +4,6 @@ import MenuContext from "../context/MenuContext";
 import AboutContext from "../context/AboutContext";
 import { successNotification, errorNotification } from "../common/notification";
 import About from "../modals/About";
-import Toggle from "../components/Toggle";
 import ChannelCard from "../components/ChannelCard";
 import Links from "../content/Links";
 import Intro from "../content/Intro";
@@ -91,10 +90,11 @@ const Main = () => {
           <About />
         </AboutContext.Provider>
       </main>
+      {/*
       <footer className="footer">
-        <Toggle theme={theme} toggleTheme={toggleTheme} />
         <Links />
       </footer>
+      */}
     </>
   );
 };

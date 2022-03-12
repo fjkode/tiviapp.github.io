@@ -144,6 +144,11 @@ const AboutPage = () => {
         <span>To view or add channels to your playlist, use:</span>
         <FaHeart />
       </li>
+      <li className="li li--flex">
+        <cite>
+          Made with ❤️ for the people : v2.0 : &copy; {new Date().getFullYear()}
+        </cite>
+      </li>
       {/* <li className="li li--flex">
         <span>
           Jackal use localStorage API in your browser, to store data received

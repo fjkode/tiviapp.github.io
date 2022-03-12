@@ -103,10 +103,11 @@ const Intro = () => {
             alt="Please support maintainers of IPTV project"
           />
         </a>
-      </div> */}
+      </div>
       <footer className="trademark">
         v2.0 / &copy; {new Date().getFullYear()} / Made with ❤️ for the people
       </footer>
+      */}
     </div>
   );
 };

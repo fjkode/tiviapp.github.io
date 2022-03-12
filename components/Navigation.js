@@ -1,18 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
 // import { FaList, FaLink, FaPlay } from "react-icons/fa";
-import { FaList, FaPlay } from "react-icons/fa";
-import { MdHttp } from "react-icons/md";
+import { FaList, FaPlay, FaChild, FaTwitter } from "react-icons/fa";
+// import { MdHttp } from "react-icons/md";
 import { BsShuffle } from "react-icons/bs";
 import { FiHelpCircle } from "react-icons/fi";
 import { SiAirplayaudio } from "react-icons/si";
 import MenuContext from "../context/MenuContext";
 import NavigationContext from "../context/NavigationContext";
 import Cart from "./Cart";
+import Toggle from "./Toggle";
 import { fixAllFlags } from "../common/components";
 
 const Navigation = () => {
-  const { channel, setChannel, handleShowList, handleShowFaq } =
-    useContext(MenuContext);
+  const {
+    channel,
+    setChannel,
+    handleShowList,
+    handleShowFaq,
+    theme,
+    toggleTheme,
+  } = useContext(MenuContext);
   const { urls, url, keyword, isPlaying, country } = channel;
   const [label, setLabel] = useState(null);
   useEffect(() => {
@@ -74,6 +81,7 @@ const Navigation = () => {
             >
               <FaLink />
             </a> */}
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
             <a
               href="#"
               className="nav__btn"
@@ -102,6 +110,26 @@ const Navigation = () => {
               <BsShuffle />
             </a>
             <Cart channel={channel} setChannel={setChannel} />
+            <a
+              className="nav__btn"
+              href="https://www.twitter.com/jackalislive"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Jackal"
+              title="Follow Jackal"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              className="nav__btn children"
+              href="https://www.savethechildren.org/us/ways-to-help"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Help make a difference in a child's life"
+              title="Help make a difference in a child's life"
+            >
+              <FaChild />
+            </a>
           </div>
           <form className="nav__form" onSubmit={handleSubmit}>
             {link && (
