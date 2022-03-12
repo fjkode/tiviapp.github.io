@@ -111,16 +111,6 @@ const Navigation = () => {
             </a>
             <Cart channel={channel} setChannel={setChannel} />
             <a
-              className="nav__btn"
-              href="https://www.twitter.com/jackalislive"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Jackal"
-              title="Follow Jackal"
-            >
-              <FaTwitter />
-            </a>
-            <a
               className="nav__btn children"
               href="https://www.savethechildren.org/us/ways-to-help"
               target="_blank"
