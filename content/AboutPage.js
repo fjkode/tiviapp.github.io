@@ -6,8 +6,15 @@ const AboutPage = () => {
   return (
     <ul className="modal__ul">
       <li>
-        Jackal is a few lines of open source code written in JavaScript that
-        beautifies data congregated in{" "}
+        Jackal is a few lines of{" "}
+        <a
+          href="https://github.com/tpkahlon/jackal"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          open source code
+        </a>{" "}
+        written in JavaScript that beautifies data congregated in{" "}
         <a
           href="https://github.com/iptv-org/iptv"
           target="_blank"
