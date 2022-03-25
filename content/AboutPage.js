@@ -6,15 +6,8 @@ const AboutPage = () => {
   return (
     <ul className="modal__ul">
       <li>
-        Jackal is a few lines of{" "}
-        <a
-          href="https://github.com/tpkahlon/jackal"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          open source code
-        </a>{" "}
-        written in JavaScript that beautifies data congregated in{" "}
+        Jackal is a few lines of open source code written in JavaScript that
+        beautifies data present in{" "}
         <a
           href="https://github.com/iptv-org/iptv"
           target="_blank"
@@ -115,54 +108,21 @@ const AboutPage = () => {
         </a>
         &nbsp;libraries.
       </li>
-      <li>
-        If you would like to add a new channel in the database, please follow
-        this{" "}
-        <a
-          href="https://github.com/iptv-org/iptv/pulls"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <strong>link</strong>
-        </a>
-        . If you want to report a broken/outdated channel, please follow this{" "}
-        <a
-          href="https://github.com/iptv-org/iptv/issues"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <strong>link</strong>
-        </a>
-        .
-      </li>
       <li className="li li--flex">
         <span>To check available channels, use:</span>
         <FaList />
       </li>
       <li className="li li--flex">
-        <span>To get a random channel, use:</span>
+        <span>To view a random channel, use:</span>
         <BsShuffle />
-      </li>
-      <li className="li li--flex">
-        <span>To play a live stream through a M3U8 link, use:</span>
-        <BsCollectionPlay />
       </li>
       <li className="li li--flex">
         <span>To view or add channels to your playlist, use:</span>
         <FaHeart />
       </li>
       <li className="li li--flex">
-        <cite>
-          Made with ❤️ for the people : v2.0 : &copy; {new Date().getFullYear()}
-        </cite>
+        <cite>v3.0 : &copy; {new Date().getFullYear()}</cite>
       </li>
-      {/* <li className="li li--flex">
-        <span>
-          Jackal use localStorage API in your browser, to store data received
-          from IPTV repository. To clear this data, use:
-        </span>
-        <FiRefreshCw />
-      </li> */}
     </ul>
   );
 };

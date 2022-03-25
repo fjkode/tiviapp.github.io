@@ -59,25 +59,6 @@ const Toggle = ({ url, title, country }) => (
           <td>{title}</td>
           <td>
             <div className="controls">
-              {isMobile && (
-                <a
-                  href="#"
-                  onClick={(e) => handlePlay(url, e)}
-                  aria-label="Play"
-                  title={url}
-                >
-                  <FaPlay />
-                </a>
-              )}
-              <a
-                title={url}
-                href={`http://rplayer.surge.sh/?url=${url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Alternate Play option"
-              >
-                <BsCollectionPlay />
-              </a>
               <a href="#" onClick={(e) => notifyCopy(url, e)}>
                 <FaRegCopy />
               </a>
