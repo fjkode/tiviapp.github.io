@@ -117,7 +117,11 @@ const AboutPage = () => {
         <BsShuffle />
       </li>
       <li className="li li--flex">
-        <span>To view or add channels to your playlist, use:</span>
+        <span>To play a live stream through a M3U8 link, use:</span>
+        <BsCollectionPlay />
+      </li>
+      <li className="li li--flex">
+        <span>To add channels to your playlist, use:</span>
         <FaHeart />
       </li>
       <li className="li li--flex">
