@@ -31,9 +31,9 @@
 Jackal requires latest [Node.js](https://nodejs.org/) LTS version or more recent.
 [Yarn package manager](https://yarnpkg.com/) is also recommended.
 
-## QA
+<!-- ## QA
 
-Please see audit report by Google Lighthouse Report [here](http://jackal.surge.sh/report.html).
+Please see audit report by Google Lighthouse Report [here](http://jackal.surge.sh/report.html). -->
 
 ## Development setup
 
